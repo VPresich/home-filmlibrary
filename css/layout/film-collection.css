@@ -62,7 +62,7 @@
 }
 
 .film-category {
-  color: #ffd88e;
+  color: var(--accent-color);
   font-size: 16px;
   font-weight: 500;
 }

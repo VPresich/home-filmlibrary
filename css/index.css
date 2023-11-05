@@ -1,0 +1,21 @@
+/* UTILS */
+@import './utils/visually-hidden.css';
+@import './utils/variables.css';
+
+/* BASE */
+/* @import './base/fonts.css'; */
+@import './base/common.css';
+@import './base/container.css';
+@import './base/section.css';
+
+/* LAYOUT */
+@import './layout/film-header.css';
+/* @import './layout/header.css'; */
+/* @import './layout/mobile-menu.css';
+@import './layout/hero.css';
+@import './layout/about.css'; */
+@import './layout/film-collection.css';
+/* @import './layout/collection.css'; */
+/* @import './layout/order.css';
+@import './layout/testimonials.css';
+@import './layout/footer.css'; */

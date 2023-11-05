@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home project Vyshyvanka Vibes</title>
+    <!-- ================================================================================== -->
+    <!-- google.fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ===================================================================================== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <!-- ====================== Film Header ========================== -->
+    <header class="film-header">
+      <div class="container film-header-container">
+        <nav class="navigation">
+          <a class="film-logotype link" href="./index.html">
+            <em>film</em>&nbsp;library
+            <span class="logo-icon-wrapper">
+              <svg
+                class="logo-icon"
+                width="52"
+                height="52"
+                aria-label="star icon"
+              >
+                <use href="./img/icons/sprite.svg#icon-star"></use>
+              </svg>
+            </span>
+          </a>
+        </nav>
+        <form class="film-search-form">
+          <input
+            class="film-search-input"
+            type="text"
+            placeholder="Input search"
+          />
+        </form>
+      </div>
+    </header>
+    <!-- ====================== Header ========================== -->
+    <!-- <header class="page-header">
+      <div class="container page-header-container">
+        <div class="header">
+          <nav class="page-navigation">
+            <a class="logotype link" href="./index.html">
+              <div class="logo-star-icon-wrapper">
+                <svg
+                  class="logo-star-icon"
+                  width="52"
+                  height="51"
+                  aria-label="star icon"
+                >
+                  <use href="./img/icons/sprite.svg#icon-star"></use>
+                </svg>
+              </div>
+              <em>film</em>&nbsp;library
+            </a>
+            <ul class="header-menu list">
+              <li class="header-menu-item">
+                <a class="header-menu-link link" href="#about">About us</a>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link link" href="#collection"
+                  >Our collection</a
+                >
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link link" href="#order-form"
+                  >Customer order</a
+                >
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link link" href="#testimonials"
+                  >TEstimonials</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-contacts-social-list">
+            <address class="contacts link">
+              <a href="tel:+380684439426" class="contact-link"
+                >+380 (68) 443-94-26</a
+              >
+            </address>
+
+            <ul class="header-social-list list">
+              <li class="social-list-item">
+                <a
+                  class="social-list-link"
+                  target="_blank"
+                  href="https://www.facebook.com/goITclub/"
+                >
+                  <svg
+                    class="social-list-icon"
+                    width="28"
+                    height="28"
+                    aria-label="facebook icon"
+                  >
+                    <use href="./img/icons/sprite.svg#id-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list-item">
+                <a
+                  class="social-list-link"
+                  target="_blank"
+                  href="https://www.instagram.com/goitclub/"
+                >
+                  <svg
+                    class="social-list-icon"
+                    width="28"
+                    height="28"
+                    aria-label="instagram icon"
+                  >
+                    <use href="./img/icons/sprite.svg#id-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list-item">
+                <a
+                  class="social-list-link"
+                  target="_blank"
+                  href="https://www.youtube.com/c/GoIT"
+                >
+                  <svg
+                    class="social-list-icon"
+                    width="28"
+                    height="28"
+                    aria-label="youtube icon"
+                  >
+                    <use href="./img/icons/sprite.svg#id-youtube"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="open-mobile-menu-btn js-open-menu-btn">
+          <svg
+            class="open-mobile-menu-icon"
+            width="36"
+            height="24"
+            aria-label="mobile menu open icon"
+          >
+            <use href="./img/icons/sprite.svg#id-nav"></use>
+          </svg>
+        </button>
+      </div>
+    </header> -->
+
+    <main>
+      <!-- ========================= HERO =========================== -->
+      <!-- <section class="hero section">
+        <div class="container">
+          <div class="hero-content-block">
+            <div class="hero-title-block">
+              <h1 class="main-title">
+                Reviving the traditional
+                <span class="accent-color">Ukrainian</span> artistry in every
+                stitch.
+              </h1>
+              <a class="order-link link" href="#order-form">
+                order
+                <span class="order-link-icon-wrapper">
+                  <svg
+                    class="order-link-icon"
+                    width="26"
+                    height="10"
+                    aria-label="order link icon"
+                  >
+                    <use href="./img/icons/sprite.svg#icon-vector"></use>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div>
+              <img
+                class="hero-girl-img"               
+                src="./img/hero/girl-mobile@1x.jpg"
+                alt="girl photo"
+              />
+            </div>
+          </div>
+          <div class="hero-handmade-block">
+            <div class="order-star-icon-wrapper">
+              <svg
+                class="order-star-icon"
+                width="52"
+                height="51"
+                aria-label="star icon"
+              >
+                <use href="./img/icons/sprite.svg#icon-star"></use>
+              </svg>
+              <p class="hero-handmade-text">all embroidery is made by hand</p>
+            </div>
+
+            <img
+              class="hero-handmade-example"
+              srcset="./img/hero/example-@2x.png 2x"
+              src="./img/hero/example-@1x.png"
+              alt="handmade example photo"
+              width="142"
+              height="100"
+            />
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ====================== Film Collеction Section ======================= -->
+      <section class="films-collection section" id="films-collection">
+        <div class="container films-collection-container">
+          <h2 class="section-title visually-hidden">Film collection</h2>
+          <ul class="films list">
+            <!-- <li class="film">
+              <div class="film-cover-inner">
+                <img
+                  class="film-cover"
+                  src="https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/f56710bd-85c3-49b8-9260-2fa8a3d07c01/600x900"
+                  alt="Description image"
+                  data-source="qqq"
+                />
+                <div class="film-cover-darkened"></div>
+              </div>
+              <div class="film-info">
+                <h3 class="film-title">Title</h3>
+                <p class="film-category">Category</p>
+                <p class="film-average film-average-green">30</p>
+                <p class="film-year">1999</p>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </section>
+      <!-- ====================== Our Collеction Section ======================= -->
+      <!-- <section class="collection section" id="collection">
+        <div class="container collection-container">
+          <h2 class="section-title section-title-collection">Our collection</h2>
+          <ul class="collection-list list">
+            <li class="collection-list-item">
+              <img
+                class="collection-list-img"               
+                src="./img/collection/mobile/w1-mobile@1x.jpg"
+                alt="Poltava women's blouse"
+              />
+              <h3 class="collection-list-name">
+                AUGUST Poltava women's blouseRING
+              </h3>
+              <p class="collection-list-price">3300 UAH</p>
+            </li>            
+          </ul>
+        </div>
+      </section> -->
+      <!-- ========================== Order SECTION ===========================-->
+      <!-- <section class="order-section section" id="order">
+        <div class="order-green-girl"></div>
+        <div class="container order-container">
+          <div class="order-items-container">
+            <div class="order-item-one">
+              <h2 class="order-section-title" id="order-form">
+                <span class="accent-color">Your order</span> is our priority:
+                Personalized approach and quality of service
+              </h2>
+              <form class="order-form">
+                <div class="order-form-field-wrapper">
+                  <input
+                    class="order-form-input"
+                    type="text"
+                    id="user-name"
+                    name="user_name"
+                    placeholder="Enter your full name"
+                    pattern="[a-zA-Zа-яА-ЯіІїЇєЄґҐʼ]+"
+                    title="Valentyna"
+                    required
+                  />
+                </div>
+                <div class="order-form-field-wrapper">
+                  <input
+                    class="order-form-input"
+                    type="email"
+                    id="user-email"
+                    placeholder="Enter your email"
+                    name="user_email"
+                    required
+                  />
+                </div>
+                <div class="order-form-field-wrapper">
+                  <textarea
+                    class="order-form-input order-form-comment"
+                    name="user_comment"
+                    id="user-comment"
+                    placeholder="Comments"
+                  ></textarea>
+                </div>
+                <button class="order-form-submit-button" type="submit">
+                  <span>Send</span>
+                  <span class="order-form-button-icon-wrapper">
+                    <svg
+                      class="order-form-button-icon"
+                      width="26"
+                      height="10"
+                      aria-label="order ink icon"
+                    >
+                      <use href="./img/icons/sprite.svg#icon-vector"></use>
+                    </svg>
+                  </span>
+                </button>
+              </form>
+            </div>
+            <div class="order-img-container">
+              <img
+                class="order-img"                
+                src="../img/order/order-tablet@1x.jpg"
+                alt="Vyshyvanka photo"
+              />
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ======================= Testimonials Section ====================== -->
+      <!-- <section class="reviews section" id="testimonials">
+        <div class="container reviews-container">
+          <h2 class="section-title reviews-section-title">Testimonials</h2>
+          <ul class="reviews-list list">
+            <li class="reviews-list-item">
+              <div class="reviews-list-icon-wrap">
+                <img
+                  class="reviews-list-avatar"
+                  srcset="
+                    ./img/reviews/maria-tkachuk.jpg,
+                    ./img/reviews/maria-tkachuk@2x.jpg
+                  "
+                  src="./img/reviews/maria-tkachuk.jpg"
+                  alt="Maria Tkachuk avatar"
+                  width="64"
+                  height="64"
+                />
+              </div>
+              <h3 class="reviews-list-fullname">Maria Tkachuk</h3>
+              <p class="reviews-list-text">
+                I was pleasantly surprised by the variety of embroidery offered
+                by Vyshyvanka Vibes. They have models for every taste - from
+                classic to modern. I bought an embroidered dress to celebrate a
+                special occasion and received impeccable service and refinement
+                in every detail.
+              </p>
+            </li>
+            
+          </ul>
+        </div>
+      </section> -->
+
+      <!-- ========================== PAGE FOOTER ==========================-->
+    </main>
+    <!-- <footer class="footer-page">
+      <div class="container footer-page-container">
+        <nav class="footer-navigation">
+          <div class="footer-menu list">
+            <ul class="about-menu-wrapper">
+              <li class="footer-menu-item">
+                <a class="footer-menu-item-link link" href="#about">About us</a>
+              </li>
+              <li class="footer-menu-item">
+                <a class="footer-menu-item-link link" href="#collection"
+                  >Our collection</a
+                >
+              </li>
+            </ul>
+            <ul class="customers-menu-wrapper">
+              <li class="footer-menu-item">
+                <a class="footer-menu-item-link link" href="#order-form"
+                  >Customer order</a
+                >
+              </li>
+              <li class="footer-menu-item">
+                <a class="footer-menu-item-link link" href="#testimonials"
+                  >TEstimonials</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <h2 class="footer-title footer-title-wrapper">
+          A touch of
+          <span class="accent-color accent-title">Ukrainian</span> culture in
+          every embroidery
+        </h2>
+
+        <div class="footer-bgr-container"></div>
+      </div>
+    </footer> -->
+
+    <!-- ===================== MOBILE MENU ======================= -->
+    <!-- <div class="mobile-menu js-mobile-menu">
+      <div class="mobile-menu-container">
+        <button class="mobile-menu-close-btn js-mobile-menu-close-btn">
+          <svg
+            class="mobile-menu-close-icon"
+            width="36"
+            height="36"
+            aria-label="mobile menu close icon"
+          >
+            <use href="./img/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <address class="mobile-contact link">
+          <a class="mobile-contact-link" href="tel:+380684439426"
+            >+380 (68) 443-94-26</a
+          >
+        </address>
+
+        <nav class="mobile-navigation">
+          <ul class="mobile-nav-list list">
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-item-link link" href="#about">About us</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-item-link link" href="#collection"
+                >Our collection</a
+              >
+            </li>
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-item-link link" href="#order-form"
+                >Customer order</a
+              >
+            </li>
+            <li class="mobile-nav-item">
+              <a class="mobile-nav-item-link link" href="#testimonials"
+                >Testimonials</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div> -->
+    <!-- <script src="./js/open-close-mobile-menu.js"></script> -->
+
+    <script src="./js/app.js" type="module"></script>
+    <!-- <script src="./js/searchData.js" type="module"></script> -->
+  </body>
+</html>

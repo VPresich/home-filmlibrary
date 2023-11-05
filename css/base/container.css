@@ -1,0 +1,45 @@
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  background-color: #1a191f;
+}
+
+@media screen and (max-width: 374px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 704px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1112px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1272px;
+  }
+}

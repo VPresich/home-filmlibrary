@@ -91,15 +91,15 @@
 }
 
 .film-average-green {
-  border: 2px solid #19d03d;
+  border: 1px solid #19d03d;
 }
 
 .film-average-orange {
-  border: 2px solid #da920c;
+  border: 1px solid #da920c;
 }
 
 .film-average-red {
-  border: 2px solid #d31414;
+  border: 1px solid #d31414;
 }
 
 @media screen and (min-width: 768px) {

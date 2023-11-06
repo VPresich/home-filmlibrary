@@ -2,8 +2,8 @@
 // const API_URL =
 //   'https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=1';
 
-import { API_KEY } from './constatnts.js';
-import { API_URL } from './constatnts.js';
+import { API_KEY } from './constants.js';
+import { API_URL } from './constants.js';
 import getData from './getData.js';
 import createFilmsGalleryMarkup from './create-gallery-markup.js';
 

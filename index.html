@@ -242,6 +242,66 @@
           </ul>
         </div>
       </section>
+      <!-- ===================Modal backdrop =========================-->
+      <div class="modal-backdrop" id="id-modal-backdrop">
+        <div class="modal-window">
+          <button class="close-button" type="button" id="id-close-button">
+            <svg class="close-icon" width="24" height="24">
+              <use href="./img/icons/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+
+          <div class="modal-content">
+            <img
+              class="modal-poster"
+              src="https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/f56710bd-85c3-49b8-9260-2fa8a3d07c01/600x900"
+              alt="Description image"
+              width="800"
+            />
+            <div class="modal-info">
+              <p class="modal-title">Film title</p>
+              <p class="modal-description">Film description</p>
+              <p class="modal-director">Film director</p>
+              <p class="modal-date">Film date</p>
+            </div>
+          </div>
+          <div class="slider-container">
+            <div class="slider-dots"></div>
+            <div class="modal-group-buttons">
+            <div class="slider-buttons">
+              <button class="slider-button" id="prevBtn">
+                <svg
+                  class="slider-button-icon-prev"
+                  width="26"
+                  height="10"
+                  aria-label="icon vector left"
+                >
+                  <use href="./img/icons/sprite.svg#icon-vector"></use>
+                </svg>
+                <span>Previous</span>
+              </button>
+
+              <button class="slider-button" id="nextBtn">
+                <span>Next</span>
+                <svg
+                  class="slider-button-icon-next"
+                  width="26"
+                  height="10"
+                  aria-label="icon vector right"
+                >
+                  <use href="./img/icons/sprite.svg#icon-vector"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-buttons">
+              <div class="modal-button" id="modal-save-button">Save</div>
+              <div class="modal-button" id="modal-exit-button">Exit</div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- ===================Modal backdrop =========================-->
       <!-- ====================== Our Collеction Section ======================= -->
       <!-- <section class="collection section" id="collection">
         <div class="container collection-container">
@@ -449,6 +509,7 @@
     <!-- <script src="./js/open-close-mobile-menu.js"></script> -->
 
     <script src="./js/app.js" type="module"></script>
+    <script src="./js/delegating.js" type="module"></script>
     <!-- <script src="./js/searchData.js" type="module"></script> -->
   </body>
 </html>

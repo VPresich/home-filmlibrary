@@ -48,7 +48,7 @@
 // </li>;
 
 export default function createFilmsGalleryMarkup(films) {
-  console.log('in create function', films);
+    
   return films
     .map(
       ({

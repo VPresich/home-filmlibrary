@@ -1,5 +1,5 @@
-import { API_KEY } from './constatnts.js';
-import { API_URL_SEARCH } from './constatnts.js';
+import { API_KEY } from './constants.js';
+import { API_URL_SEARCH } from './constants.js';
 import getData from './getData.js';
 import createFilmsGalleryMarkup from './create-gallery-markup.js';
 

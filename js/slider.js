@@ -70,8 +70,7 @@ class Slider {
         this.#slides.forEach((slide) => {
           slide.offset -= delta;
         });
-      }
-      console.log("goToSlide", index, delta, this.#currentSlide);
+      }     
       this.setSlidesProperty();
     }
   

@@ -1,7 +1,7 @@
 // For my modal window
 import { KEY_CODE_ESC } from './constants.js';
 import Slider from './slider.js';
-import SliderInterface from './slider-interface.js';
+import ModalSliderInterface from './modal-slider-interface.js';
 import createModalContentMarkup from './create-modal-content-markup.js';
 import film from './data/filmById.js';
 import insertDataToModalContent from './insert-data-to-modal-content.js';
@@ -37,7 +37,7 @@ function onImageClick(event) {
   const indexList = Array.from(filmList).indexOf(closestLi);
 
   const sliderRef = new Slider(indexList, 1, filmList.length);
-  const sliderInterface = new SliderInterface(
+  const sliderInterface = new ModalSliderInterface(
     sliderRef,
     filmList,
     insertDataToModalContent,
@@ -50,11 +50,13 @@ function onImageClick(event) {
 function openModalWindow(filmId, createFilmMarkup) {
   // insertDataToModalContent(filmId);
   refs.modalBackdrop.classList.add('is-open');
+  document.body.classList.add('stop-scrolling');
   window.addEventListener('keydown', onWindowKeydown);
 }
 
 function onCloseModalWindow(event) {
   window.removeEventListener('keydown', onWindowKeydown);
+  document.body.classList.remove('stop-scrolling');
   refs.modalBackdrop.classList.remove('is-open');
 }
 

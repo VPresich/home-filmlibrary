@@ -11,6 +11,7 @@
 /* LAYOUT */
 @import './layout/films-header.css';
 @import './layout/films-collection.css';
+@import './layout/films-pagination.css';
 @import './layout/films-modal-window.css';
 @import './layout/films-slider.css';
 /* @import './layout/collection.css'; */

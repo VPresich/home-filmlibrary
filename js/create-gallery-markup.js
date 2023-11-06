@@ -87,6 +87,7 @@ export default function createFilmsGalleryMarkup(films) {
     )
     .join('');
 }
+
 function getColor(rating) {
   let color = 'red';
   if (rating > 7) {

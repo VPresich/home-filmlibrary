@@ -1,4 +1,4 @@
-class SliderInterface {
+class ModalSliderInterface {
   static touchThreshold = 75;
   #sliderRef;
   constructor(sliderRef, elementsList, fnUpdateMarkUp, sliderContent) {
@@ -7,7 +7,6 @@ class SliderInterface {
     this.sliderDots = document.querySelector('.slider-dots');
     this.#sliderRef = sliderRef;
     this.elementsList = elementsList;
-
     this.fnUpdateMarkUp = fnUpdateMarkUp;
     this.sliderContent = sliderContent;
 
@@ -94,4 +93,4 @@ class SliderInterface {
   }
 }
 
-export default SliderInterface;
+export default ModalSliderInterface;

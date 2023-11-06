@@ -53,7 +53,7 @@
   background-color: transparent;
   outline: transparent;
 
-  color: rgba(252, 249, 249, 0.5);
+  color: var(--primary-color);
   font-family: inherit;
   font-size: 16px;
   font-weight: 400;
@@ -61,7 +61,7 @@
 
   border-radius: 15px;
   border: 1px solid var(--primary-color);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .film-search-input:hover,

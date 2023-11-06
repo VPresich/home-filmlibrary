@@ -56,9 +56,9 @@
   stroke: var(--accent-color);
 }
 
-/* .close-button {
+.close-button {
   display: none;
-} */
+}
 
 .modal-buttons {
   display: flex;
@@ -89,7 +89,6 @@
 .modal-group-buttons {
   display: flex;
   column-gap: 20px;
-  /* justify-content: flex-end; */
 }
 
 .modal-content {

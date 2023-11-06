@@ -56,9 +56,9 @@
   stroke: var(--accent-color);
 }
 
-.close-button {
+/* .close-button {
   display: none;
-}
+} */
 
 .modal-buttons {
   display: flex;
@@ -86,7 +86,7 @@
   border-color: var(--accent-color);
 }
 
-.modal-group-buttons{
+.modal-group-buttons {
   display: flex;
   column-gap: 20px;
   /* justify-content: flex-end; */
@@ -101,6 +101,7 @@
 .modal-poster {
   width: 400px;
   height: 500px;
+  object-fit: cover;
 }
 
 .modal-info {
@@ -126,7 +127,7 @@
   line-height: 1.23;
 }
 
-.modal-director {
+.modal-country {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.23;

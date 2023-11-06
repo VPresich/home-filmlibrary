@@ -48,7 +48,6 @@
 // </li>;
 
 export default function createFilmsGalleryMarkup(films) {
-    
   return films
     .map(
       ({
@@ -58,16 +57,18 @@ export default function createFilmsGalleryMarkup(films) {
         ratingImdb,
         posterUrlPreview,
         posterUrl,
+        kinopoiskId,
       }) => {
-        return `<li class="film">
+        return `<li class="film" 
+                    data-filmid = "${kinopoiskId}">
             <div class="film-cover-inner">
                 <img
                   class="film-cover"
                   src="${posterUrlPreview}"
                   alt="photo of ${nameOriginal}"
-                  data-source = "${posterUrl}"
+                  data-source = "${posterUrl}"                  
                   width = "240"
-                  height = "360"                  
+                  height = "360"
                 />
                 <div class="film-cover-darkened"></div>
             </div>

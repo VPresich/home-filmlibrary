@@ -9,14 +9,10 @@
 @import './base/section.css';
 
 /* LAYOUT */
-@import './layout/film-header.css';
-/* @import './layout/header.css'; */
-/* @import './layout/mobile-menu.css';
-@import './layout/hero.css';
-@import './layout/about.css'; */
-@import './layout/film-collection.css';
-@import './layout/film-modal-window.css';
-@import './layout/film-slider.css';
+@import './layout/films-header.css';
+@import './layout/films-collection.css';
+@import './layout/films-modal-window.css';
+@import './layout/films-slider.css';
 /* @import './layout/collection.css'; */
 /* @import './layout/order.css';
 @import './layout/testimonials.css';

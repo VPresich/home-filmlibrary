@@ -34,12 +34,12 @@ body {
 
 @media screen and (min-width: 1280px) {
   .container {
-    width: 1112px;
+    width: 1200px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1272px;
+    width: 1360px;
   }
 }

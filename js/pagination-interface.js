@@ -1,9 +1,11 @@
 import Slider from './slider.js';
-
+import insertPageDataToGallery from './insert-page-data-to-gallery.js';
 class PaginationInterface {
   #sliderRef;
   #elementsPerPage = 8;
-  constructor(data, fnUpdateMarkUp, pageContent) {
+  #isNewRequestForPage = 0;
+
+  constructor(data, fnUpdateMarkUp, pageContent, pagesNum = 1) {
     this.prevBtn = document.getElementById('prevPageBtn');
     this.nextBtn = document.getElementById('nextPageBtn');
     this.paginationDots = document.querySelector('.pagination-dots');
@@ -11,7 +13,16 @@ class PaginationInterface {
     this.fnUpdateMarkUp = fnUpdateMarkUp;
     this.pageContent = pageContent;
 
-    this.pagesNum = Math.ceil(this.data.length / this.#elementsPerPage);
+    if (pagesNum) {
+      // By pages from server
+      this.#isNewRequestForPage = 1;
+      this.pagesNum = pagesNum;
+      this.#elementsPerPage = data.length;
+    } else {
+      // By pages from data
+      this.pagesNum = Math.ceil(this.data.length / this.#elementsPerPage);
+    }
+
     this.#sliderRef = new Slider(0, 1, this.pagesNum);
 
     this.initBtnsFunction();
@@ -53,15 +64,19 @@ class PaginationInterface {
   }
 
   updateContent() {
-    const startElement = this.#sliderRef.currentSlide * this.#elementsPerPage;
-    const elements = this.data.slice(
-      startElement,
-      startElement + this.#elementsPerPage
-    );
+    if (this.#isNewRequestForPage) {
+      insertPageDataToGallery(this.#sliderRef.currentSlide + 1);
+    } else {
+      const startElement = this.#sliderRef.currentSlide * this.#elementsPerPage;
+      const elements = this.data.slice(
+        startElement,
+        startElement + this.#elementsPerPage
+      );
 
-    this.pageContent.innerHTML = '';
-    const elementsMarkup = this.fnUpdateMarkUp(elements);
-    this.pageContent.insertAdjacentHTML('beforeend', elementsMarkup);
+      this.pageContent.innerHTML = '';
+      const elementsMarkup = this.fnUpdateMarkUp(elements);
+      this.pageContent.insertAdjacentHTML('beforeend', elementsMarkup);
+    }
   }
 
   updateButtons() {

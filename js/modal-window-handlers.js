@@ -2,20 +2,25 @@
 import { KEY_CODE_ESC } from './constants.js';
 import Slider from './slider.js';
 import ModalSliderInterface from './modal-slider-interface.js';
-import createModalContentMarkup from './create-modal-content-markup.js';
-import film from './data/filmById.js';
 import insertDataToModalContent from './insert-data-to-modal-content.js';
+import insertDataToModalVideoContent from './insert-data-to-modal-content-video.js';
 
 const refs = {
   gallery: document.querySelector('.films'),
   modalBackdrop: document.querySelector('.modal-backdrop'),
-  buttonClose: document.querySelector('.close-button'),
+  iconCloseBtn: document.querySelector('.close-button'),
   modalContent: document.querySelector('.modal-content'),
+  modalExitBtn: document.getElementById('modal-exit-button'),
+  modalSaveBtn: document.getElementById('modal-save-button'),
+  modalPlayBtn: document.getElementById('modal-play-button'),
 };
 
 refs.gallery.addEventListener('click', onImageClick);
-refs.buttonClose.addEventListener('click', onCloseModalWindow);
+refs.iconCloseBtn.addEventListener('click', onCloseModalWindow);
+refs.modalExitBtn.addEventListener('click', onCloseModalWindow);
 refs.modalBackdrop.addEventListener('click', onBackdropClick);
+refs.modalSaveBtn.addEventListener('click', onSaveBtnClick);
+refs.modalPlayBtn.addEventListener('click', onPlayBtnClick);
 
 function onImageClick(event) {
   const targetRef = event.target;
@@ -30,9 +35,7 @@ function onImageClick(event) {
 
   const closestLi = targetRef.closest('.film');
 
-  const filmKinopoiskId = closestLi.dataset.filmid;
-
-  console.log('filmKinopoiskId:', filmKinopoiskId);
+  const filmId = closestLi.dataset.filmid;
   const filmList = event.currentTarget.children;
   const indexList = Array.from(filmList).indexOf(closestLi);
 
@@ -40,15 +43,17 @@ function onImageClick(event) {
   const sliderInterface = new ModalSliderInterface(
     sliderRef,
     filmList,
-    insertDataToModalContent,
+    //insertDataToModalContent, // Poster OK!
+    insertDataToModalVideoContent, // Trailer TODO
     refs.modalContent
   );
 
-  openModalWindow(filmKinopoiskId, createModalContentMarkup);
+  openModalWindow(filmId);
 }
 
-function openModalWindow(filmId, createFilmMarkup) {
-  // insertDataToModalContent(filmId);
+function openModalWindow(filmId) {
+  // insertDataToModalContent(filmId); // Poster without slider
+  // insertDataToModalVideoContent(filmId); // Trailer without slider
   refs.modalBackdrop.classList.add('is-open');
   document.body.classList.add('stop-scrolling');
   window.addEventListener('keydown', onWindowKeydown);
@@ -71,3 +76,7 @@ function onBackdropClick(event) {
     onCloseModalWindow(event);
   }
 }
+
+function onSaveBtnClick(event) {}
+
+function onPlayBtnClick(event) {}

@@ -18,4 +18,4 @@ export const API_URL_SERCHBYID =
   'https://kinopoiskapiunofficial.tech/api/v2.2/films/';
 
 export const API_URL_VIDEO =
-  'https://kinopoiskapiunofficial.tech/api/v2.2/films/435/videos';
+  'https://kinopoiskapiunofficial.tech/api/v2.2/films/';

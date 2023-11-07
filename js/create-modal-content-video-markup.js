@@ -56,24 +56,32 @@
 //   "completed": false
 // };
 
-export default function createModalContentMarkup(film) {
-  const { nameOriginal, shortDescription, genres, posterUrl, countries, year } =
-    film;
-  return `<img
-        class="modal-poster"
-        src="${posterUrl}"
-        alt="Poster of ${nameOriginal} film"
-        width="400"
-      />
+const video = {
+  url: 'https://widgets.kinopoisk.ru/discovery/trailer/12799?onlyPlayer=1&autoplay=1&cover=1',
+  name: 'Трейлер (русский язык)',
+  site: 'KINOPOISK_WIDGET',
+};
+
+export default function createModalContentVideoMarkup(film, video) {
+  const { nameOriginal, description, genres, countries, year } = film;
+
+  return `<iframe
+        class="modal-video"
+        src="${video.url}"
+        width="900"
+        height="500">
+      </iframe>
       <div class="modal-info">
         <p class="modal-title">${nameOriginal}</p>
-        <p class="modal-description">${shortDescription}</p>
+        <p class="modal-description">${description}</p>
         <p class="modal-genres">Genres: ${genres
           .map(({ genre }) => genre)
-          .join(', ')}</p>
-          <p class="modal-country">Countries: ${countries
-            .map(({ country }) => country)
-            .join(', ')}</p>
+          .join(', ')}
+        </p>
+        <p class="modal-country">Countries: ${countries
+          .map(({ country }) => country)
+          .join(', ')}
+        </p>
         <p class="modal-date">Year: ${year}</p>
       </div>`;
 }

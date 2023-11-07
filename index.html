@@ -48,7 +48,8 @@
         </form>
       </div>
     </header>
-    <!-- ====================== Header ========================== -->
+
+    <!-- ====================== OLD Header (Может пригодится разметка для сетей)==== -->
     <!-- <header class="page-header">
       <div class="container page-header-container">
         <div class="header">
@@ -160,13 +161,12 @@
     </header> -->
 
     <main>
-      <!-- ========================= HERO =========================== -->
-
       <!-- ====================== Film Collеction Section ======================= -->
       <section class="films-collection section" id="films-collection">
         <div class="container films-collection-container">
           <h2 class="section-title visually-hidden">Film collection</h2>
           <ul class="films list">
+            <!-- ================Dynamic creation ==================================-->
             <!-- <li class="film">
               <div class="film-cover-inner">
                 <img
@@ -184,37 +184,38 @@
                 <p class="film-year">1999</p>
               </div>
             </li> -->
+            <!-- ================Dynamic creation ==================================-->
           </ul>
-          <div class="pagination"> 
-          
-          <div class="pagination-buttons">
-            <button class="pagination-button" id="prevPageBtn">
-              <svg
-                class="pagination-button-icon-prev"
-                width="26"
-                height="10"
-                aria-label="icon vector left"
-              >
-                <use href="./img/icons/sprite.svg#icon-vector"></use>
-              </svg>
-              <span>Previous page</span>
-            </button>
-            <div class="pagination-dots"></div>
-            <button class="pagination-button" id="nextPageBtn">
-              <span>Next page</span>
-              <svg
-                class="pagination-button-icon-next"
-                width="26"
-                height="10"
-                aria-label="icon vector right"
-              >
-                <use href="./img/icons/sprite.svg#icon-vector"></use>
-              </svg>
-            </button>
-          </div>
+          <div class="pagination">
+            <div class="pagination-buttons">
+              <button class="pagination-button" id="prevPageBtn">
+                <svg
+                  class="pagination-button-icon-prev"
+                  width="26"
+                  height="10"
+                  aria-label="icon vector left"
+                >
+                  <use href="./img/icons/sprite.svg#icon-vector"></use>
+                </svg>
+                <span>Previous page</span>
+              </button>
+              <div class="pagination-dots"></div>
+              <button class="pagination-button" id="nextPageBtn">
+                <span>Next page</span>
+                <svg
+                  class="pagination-button-icon-next"
+                  width="26"
+                  height="10"
+                  aria-label="icon vector right"
+                >
+                  <use href="./img/icons/sprite.svg#icon-vector"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
+
       <!-- ===================Modal backdrop =========================-->
       <div class="modal-backdrop" id="id-modal-backdrop">
         <div class="modal-window">
@@ -225,22 +226,44 @@
           </button>
 
           <div class="modal-content">
-            <img
+            <!-- ================Dynamic creation ========================-->
+            <!-- <img
               class="modal-poster"
               src="https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/f56710bd-85c3-49b8-9260-2fa8a3d07c01/600x900"
               alt="Description image"
-              width="800"
-            />
+              width="400"
+              height="500"
+            /> -->
+            <!-- <iframe
+              class="modal-video"
+              src="https://player.vimeo.com/video/236203659"
+              width="400"
+              height="500"
+            ></iframe>
             <div class="modal-info">
               <p class="modal-title">Film title</p>
               <p class="modal-description">Film description</p>
               <p class="modal-director">Film director</p>
               <p class="modal-date">Film date</p>
-            </div>
+            </div> -->
+            <!-- ================Dynamic creation =========================-->
           </div>
           <div class="slider-container">
             <div class="slider-dots"></div>
             <div class="modal-group-buttons">
+              <div class="player-buttons">
+                <button class="player-button" id="modal-player-button">
+                  <svg
+                    class="player-button-icon-play"
+                    width="30"
+                    height="30"
+                    aria-label="icon play"
+                  >
+                    <use href="./img/icons/sprite.svg#icon-play1"></use>
+                  </svg>
+                  <span>Play</span>
+                </button>
+              </div>
               <div class="slider-buttons">
                 <button class="slider-button" id="prevBtn">
                   <svg
@@ -276,75 +299,8 @@
       </div>
       <!-- ===================Modal backdrop =========================-->
 
-      <!-- ========================== Order SECTION ===========================-->
-      <!-- <section class="order-section section" id="order">
-        <div class="order-green-girl"></div>
-        <div class="container order-container">
-          <div class="order-items-container">
-            <div class="order-item-one">
-              <h2 class="order-section-title" id="order-form">
-                <span class="accent-color">Your order</span> is our priority:
-                Personalized approach and quality of service
-              </h2>
-              <form class="order-form">
-                <div class="order-form-field-wrapper">
-                  <input
-                    class="order-form-input"
-                    type="text"
-                    id="user-name"
-                    name="user_name"
-                    placeholder="Enter your full name"
-                    pattern="[a-zA-Zа-яА-ЯіІїЇєЄґҐʼ]+"
-                    title="Valentyna"
-                    required
-                  />
-                </div>
-                <div class="order-form-field-wrapper">
-                  <input
-                    class="order-form-input"
-                    type="email"
-                    id="user-email"
-                    placeholder="Enter your email"
-                    name="user_email"
-                    required
-                  />
-                </div>
-                <div class="order-form-field-wrapper">
-                  <textarea
-                    class="order-form-input order-form-comment"
-                    name="user_comment"
-                    id="user-comment"
-                    placeholder="Comments"
-                  ></textarea>
-                </div>
-                <button class="order-form-submit-button" type="submit">
-                  <span>Send</span>
-                  <span class="order-form-button-icon-wrapper">
-                    <svg
-                      class="order-form-button-icon"
-                      width="26"
-                      height="10"
-                      aria-label="order ink icon"
-                    >
-                      <use href="./img/icons/sprite.svg#icon-vector"></use>
-                    </svg>
-                  </span>
-                </button>
-              </form>
-            </div>
-            <div class="order-img-container">
-              <img
-                class="order-img"                
-                src="../img/order/order-tablet@1x.jpg"
-                alt="Vyshyvanka photo"
-              />
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- ======================= Testimonials Section ====================== -->
-      <!-- <section class="reviews section" id="testimonials">
+      <!-- ======================= OLD Testimonials Section Может пригодится для отзывов->
+      <section class="reviews section" id="testimonials">
         <div class="container reviews-container">
           <h2 class="section-title reviews-section-title">Testimonials</h2>
           <ul class="reviews-list list">
@@ -375,9 +331,8 @@
           </ul>
         </div>
       </section> -->
-
-      <!-- ========================== PAGE FOOTER ==========================-->
     </main>
+    <!-- ========================== OLD PAGE FOOTER Может просто пригодиться ========-->
     <!-- <footer class="footer-page">
       <div class="container footer-page-container">
         <nav class="footer-navigation">
@@ -417,7 +372,7 @@
       </div>
     </footer> -->
 
-    <!-- ===================== MOBILE MENU ======================= -->
+    <!-- ===================== OLD MOBILE MENU Может просто пригодиться ============= -->
     <!-- <div class="mobile-menu js-mobile-menu">
       <div class="mobile-menu-container">
         <button class="mobile-menu-close-btn js-mobile-menu-close-btn">
@@ -464,7 +419,7 @@
     <!-- <script src="./js/open-close-mobile-menu.js"></script> -->
 
     <script src="./js/app.js" type="module"></script>
-    <script src="./js/delegating.js" type="module"></script>
+    <script src="./js/modal-window-handlers.js" type="module"></script>
     <!-- <script src="./js/searchData.js" type="module"></script> -->
   </body>
 </html>

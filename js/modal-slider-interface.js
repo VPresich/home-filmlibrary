@@ -39,11 +39,11 @@ class ModalSliderInterface {
       const currentX = event.touches[0].clientX;
       const deltaX = startX - currentX;
 
-      if (deltaX > SliderInterface.touchThreshold) {
+      if (deltaX > this.touchThreshold) {
         this.#sliderRef.onNextSlide();
         startX = currentX;
         this.update();
-      } else if (deltaX < -SliderInterface.touchThreshold) {
+      } else if (deltaX < -this.touchThreshold) {
         this.#sliderRef.onPrevSlide();
         startX = currentX;
         this.update();

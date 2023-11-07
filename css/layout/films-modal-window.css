@@ -98,7 +98,7 @@
 }
 
 .modal-poster {
-  width: 400px;
+  width: 900px;
   height: 500px;
   object-fit: cover;
 }
@@ -114,6 +114,7 @@
   flex-direction: column;
   row-gap: 16px;
   padding: 24px;
+  row-gap: 16px;
 
   border: 1px solid var(--accent-color);
 }
@@ -126,19 +127,19 @@
 }
 
 .modal-description {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.23;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .modal-country {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.23;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .modal-year {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.23;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
 }

@@ -57,6 +57,7 @@ export default function createFilmsGalleryMarkup(films) {
         ratingImdb,
         posterUrlPreview,
         posterUrl,
+        nameRu,
         kinopoiskId,
       }) => {
         return `<li class="film" 
@@ -73,7 +74,7 @@ export default function createFilmsGalleryMarkup(films) {
                 <div class="film-cover-darkened"></div>
             </div>
             <div class="film-info">
-                <h3 class="film-title">${nameOriginal}</h3>
+                <h3 class="film-title">${nameOriginal || nameRu}</h3>
                 <p class="film-category">${genres
                   .map(({ genre }) => genre)
                   .join(', ')}</p>

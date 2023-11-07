@@ -57,16 +57,25 @@
 // };
 
 export default function createModalContentMarkup(film) {
-  const { nameOriginal, shortDescription, genres, posterUrl, countries, year } =
-    film;
+  const {
+    nameOriginal,
+    nameRu,
+    description,
+    genres,
+    posterUrl,
+    shortDescription,
+    coverUrl,
+    countries,
+    year,
+  } = film;
   return `<img
         class="modal-poster"
-        src="${posterUrl}"
-        alt="Poster of ${nameOriginal} film"
-        width="400"
+        src="${coverUrl}"
+        alt="Poster of ${nameOriginal || nameRu} film"
+        width="900"
       />
       <div class="modal-info">
-        <p class="modal-title">${nameOriginal}</p>
+        <p class="modal-title">${nameOriginal || nameRu}</p>
         <p class="modal-description">${shortDescription}</p>
         <p class="modal-genres">Genres: ${genres
           .map(({ genre }) => genre)

@@ -46,8 +46,8 @@ function onImageClick(event) {
   const sliderInterface = new ModalSliderInterface(
     sliderRef,
     filmList,
-    //insertDataToModalContent, // Poster OK!
-    insertDataToModalVideoContent, // Trailer TODO
+    insertDataToModalContent, // Poster OK!
+    //insertDataToModalVideoContent, // Trailer TODO
     refs.modalContent
   );
 

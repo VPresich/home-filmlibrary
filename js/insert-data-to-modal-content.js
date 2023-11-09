@@ -1,6 +1,6 @@
 import { API_KEY } from './constants.js';
 import { API_URL_SERCHBYID } from './constants.js';
-import getData from './getData.js';
+import getData from './get-data.js';
 import createModalContentMarkup from './create-modal-content-markup.js';
 
 export default async function insertDataToGallery(idItem) {

@@ -95,16 +95,17 @@
   display: flex;
   column-gap: 24px;
   margin-bottom: 24px;
+  color: var(--primary-color);
 }
 
 .modal-poster {
-  width: 900px;
+  width: 500px;
   height: 500px;
   object-fit: cover;
 }
 
 .modal-video {
-  width: 900px;
+  width: 800px;
   height: 500px;
 }
 

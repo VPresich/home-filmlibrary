@@ -13,6 +13,8 @@ const refs = {
   modalExitBtn: document.getElementById('modal-exit-button'),
   modalSaveBtn: document.getElementById('modal-save-button'),
   modalPlayBtn: document.getElementById('modal-play-button'),
+  modalPauseBtn: document.getElementById('modal-pause-button'),
+  modalVideo: document.querySelector('.modal-video'),
 };
 
 refs.gallery.addEventListener('click', onImageClick);
@@ -21,6 +23,7 @@ refs.modalExitBtn.addEventListener('click', onCloseModalWindow);
 refs.modalBackdrop.addEventListener('click', onBackdropClick);
 refs.modalSaveBtn.addEventListener('click', onSaveBtnClick);
 refs.modalPlayBtn.addEventListener('click', onPlayBtnClick);
+refs.modalPauseBtn.addEventListener('click', onPauseBtnClick);
 
 function onImageClick(event) {
   const targetRef = event.target;
@@ -43,8 +46,8 @@ function onImageClick(event) {
   const sliderInterface = new ModalSliderInterface(
     sliderRef,
     filmList,
-    insertDataToModalContent, // Poster OK!
-    //insertDataToModalVideoContent, // Trailer TODO
+    //insertDataToModalContent, // Poster OK!
+    insertDataToModalVideoContent, // Trailer TODO
     refs.modalContent
   );
 
@@ -80,3 +83,5 @@ function onBackdropClick(event) {
 function onSaveBtnClick(event) {}
 
 function onPlayBtnClick(event) {}
+
+function onPauseBtnClick(event) {}

@@ -72,7 +72,7 @@ export default function createModalContentMarkup(film) {
         class="modal-poster"
         src="${coverUrl}"
         alt="Poster of ${nameOriginal || nameRu} film"
-        width="900"
+        width="800"
       />
       <div class="modal-info">
         <p class="modal-title">${nameOriginal || nameRu}</p>

@@ -1,7 +1,11 @@
 import { API_KEY } from './constants.js';
+import { API_KEY_IMDB } from './constants.js';
 import { API_URL_SERCHBYID } from './constants.js';
 import { API_URL_VIDEO } from './constants.js';
-import getData from './getData.js';
+
+import getData from './get-data.js';
+import getImdbApi from './get-omdb-api.js';
+
 import createModalContentMarkup from './create-modal-content-markup.js';
 import createModalContentVideoMarkup from './create-modal-content-video-markup.js';
 
@@ -13,15 +17,19 @@ export default async function insertDataToGallery(idItem) {
   try {
     const respData = await getData(apiUrlById, API_KEY);
     const respDataVideo = await getData(apiUrlByIdVideo, API_KEY);
+    // const respDataImDb = await getData(
+    //   getImdbApi('tt0133093', API_KEY_IMDB),
+    //   API_KEY_IMDB
+    // );
 
-    console.log('get video result:', respDataVideo.items[0]);
+    // console.log('respDataImDb =', respDataImDb);
 
     modalContentRef.innerHTML = '';
     const modalMarkup = createModalContentVideoMarkup(
       respData,
-      respDataVideo.items[0]
+      respDataVideo.items
     );
-    console.log(modalMarkup); // До этого момента все ОК
+
     modalContentRef.insertAdjacentHTML('beforeend', modalMarkup);
   } catch (error) {
     console.error('Error:', error);

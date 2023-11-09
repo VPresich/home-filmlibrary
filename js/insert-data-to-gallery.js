@@ -1,6 +1,6 @@
 import { API_KEY } from './constants.js';
 import { API_URL_TOP } from './constants.js';
-import getData from './getData.js';
+import getData from './get-data.js';
 import createFilmsGalleryMarkup from './create-gallery-markup.js';
 import PaginationInterface from './pagination-interface.js';
 

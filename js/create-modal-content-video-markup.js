@@ -56,32 +56,58 @@
 //   "completed": false
 // };
 
-const video = {
-  url: 'https://widgets.kinopoisk.ru/discovery/trailer/12799?onlyPlayer=1&autoplay=1&cover=1',
-  name: 'Трейлер (русский язык)',
-  site: 'KINOPOISK_WIDGET',
-};
+// const video = {
+//   url: '',
+//   name: '',
+//   site: '',
+// };
 
-export default function createModalContentVideoMarkup(film, video) {
-  const { nameOriginal, description, genres, countries, year } = film;
+export default function createModalContentVideoMarkup(film, videos) {
+  const { nameOriginal, nameRu, shortDescription, genres, countries, year } =
+    film;
 
   return `<iframe
         class="modal-video"
-        src="${video.url}"
-        width="900"
-        height="500">
+        src='${getEmbededURL(videos)}'
+        width="800"
+        height="500"
+        >        
       </iframe>
+
       <div class="modal-info">
-        <p class="modal-title">${nameOriginal}</p>
-        <p class="modal-description">${description}</p>
+        <p class="modal-title">${nameOriginal || nameRu}</p>
+        <p class="modal-description">${shortDescription}</p>
         <p class="modal-genres">Genres: ${genres
           .map(({ genre }) => genre)
           .join(', ')}
         </p>
+
         <p class="modal-country">Countries: ${countries
           .map(({ country }) => country)
           .join(', ')}
         </p>
         <p class="modal-date">Year: ${year}</p>
       </div>`;
+}
+
+function getEmbededURL(videos) {
+  const defaultUrl = 'https://www.youtube.com/embed/zckJCxYxn1g';
+
+  console.log('videos:', videos);
+
+  const withEmbededUrl = videos
+    .filter(
+      video =>
+        (video.site === 'YOUTUBE' && video.url.includes('watch?v=')) ||
+        (video.site === 'YOUTUBE' && video.url.includes('embed/'))
+    )
+    .map(video => ({
+      ...video,
+      url: video.url.replace('watch?v=', 'embed/'),
+    }));
+
+  console.log('withEmbededUrl:', withEmbededUrl);
+
+  return withEmbededUrl.length ? withEmbededUrl[0].url : defaultUrl;
+  //return defaultUrl;
 }

@@ -59,9 +59,11 @@ export default function createFilmsGalleryMarkup(films) {
         posterUrl,
         nameRu,
         kinopoiskId,
+        imdbId,
       }) => {
         return `<li class="film" 
-                    data-filmid = "${kinopoiskId}">
+                    data-filmid = "${kinopoiskId}"
+                    data-imdbid = "${imdbId}">
             <div class="film-cover-inner">
                 <img
                   class="film-cover"

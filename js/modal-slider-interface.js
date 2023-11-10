@@ -5,6 +5,7 @@ class ModalSliderInterface {
     this.prevBtn = document.getElementById('prevBtn');
     this.nextBtn = document.getElementById('nextBtn');
     this.sliderDots = document.querySelector('.slider-dots');
+    this.touchStartX = 0;
     this.#sliderRef = sliderRef;
     this.elementsList = elementsList;
     this.fnUpdateMarkUp = fnUpdateMarkUp;
@@ -28,40 +29,45 @@ class ModalSliderInterface {
     });
   }
 
-  initTouchFunction() {
-    let startX = 0;
-
+  initTouchFunction() {   
     this.sliderContent.addEventListener('touchstart', event => {
-      startX = event.touches[0].clientX;
+      this.touchStartX = event.touches[0].clientX;
     });
 
     this.sliderContent.addEventListener('touchmove', event => {
       const currentX = event.touches[0].clientX;
-      const deltaX = startX - currentX;
+      const deltaX = this.touchStartX - currentX;
 
-      if (deltaX > this.touchThreshold) {
+      if (deltaX > ModalSliderInterface.touchThreshold) {
         this.#sliderRef.onNextSlide();
-        startX = currentX;
+        this.touchStartX = currentX;
         this.update();
-      } else if (deltaX < -this.touchThreshold) {
+      } else if (deltaX < -ModalSliderInterface.touchThreshold) {
         this.#sliderRef.onPrevSlide();
-        startX = currentX;
+        this.touchStartX = currentX;
         this.update();
       }
     });
   }
 
   createDots() {
-    this.sliderDots.innerHTML = '';
+    this.sliderDots.innerHTML = "";
     for (let ind = 0; ind < this.elementsList.length; ind += 1) {
-      const dot = document.createElement('div');
-      dot.className = 'slider-dot';
-      dot.addEventListener('click', () => {
-        this.#sliderRef.goToSlide(ind);
-        this.update();
-      });
+      const dot = document.createElement("div");
+      dot.className = "slider-dot";
+      dot.dataset.index = ind;
       this.sliderDots.appendChild(dot);
     }
+
+    this.sliderDots.addEventListener("click", (event) => {
+      const dot = event.target;
+      if (dot.classList.contains("slider-dot")) {
+        const index = parseInt(dot.dataset.index, 10);
+        console.log(index);
+        this.#sliderRef.goToSlide(index);
+        this.update();
+      }
+    });
   }
 
   update() {

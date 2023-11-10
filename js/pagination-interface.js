@@ -49,12 +49,18 @@ class PaginationInterface {
       const dot = document.createElement('div');
       dot.className = 'pagination-dot';
       dot.textContent = `${ind + 1}`;
-      dot.addEventListener('click', () => {
-        this.#sliderRef.goToSlide(ind);
-        this.update();
-      });
+      dot.dataset.index = ind;     
       this.paginationDots.appendChild(dot);
     }
+
+    this.paginationDots.addEventListener("click", (event) => {
+      const dot = event.target;
+      if (dot.classList.contains('pagination-dot')) {
+        const index = parseInt(dot.dataset.index, 10);        
+        this.#sliderRef.goToSlide(index);
+        this.update();
+      }
+    });
   }
 
   update() {

@@ -62,8 +62,7 @@ class ModalSliderInterface {
     this.sliderDots.addEventListener("click", (event) => {
       const dot = event.target;
       if (dot.classList.contains("slider-dot")) {
-        const index = parseInt(dot.dataset.index, 10);
-        console.log(index);
+        const index = parseInt(dot.dataset.index, 10);       
         this.#sliderRef.goToSlide(index);
         this.update();
       }

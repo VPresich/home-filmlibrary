@@ -9,7 +9,7 @@ export default async function insertDataToGallery(idItem) {
 
   try {
     const respData = await getData(apiUrlById, API_KEY);
-    console.log(respData);
+  
     modalContentRef.innerHTML = '';
     const modalMarkup = createModalContentMarkup(respData);
 

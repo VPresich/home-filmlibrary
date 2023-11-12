@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 
 <html lang="en">
   <head>
@@ -161,10 +161,181 @@
     </header> -->
 
     <main>
+      <!-- ================= posters section (Slider) ================== -->
+      <section class="posters-collection section">
+        <div class="posters-collection-container container">
+          <h2 class="section-title">Posters collection</h2>
+          <div class="slider-wrapper">
+            <ul class="posters-slider list">
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-1.jpg"
+                    alt="Poster"
+                    width="230"
+                    height="201"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 1</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">1999</p>
+                </div>
+              </li>
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-2.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 2</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-3.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 3</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-4.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 4</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-5.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 5</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-6.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 6</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-7.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 7</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+
+              <li class="poster">
+                <div class="poster-cover-inner">
+                  <img
+                    class="poster-cover"
+                    src="./img/posters/poster-8.jpg"
+                    alt="Poster"
+                    width="300"
+                  />
+                  <div class="poster-cover-darkened"></div>
+                </div>
+                <div class="poster-info">
+                  <h3 class="poster-title">Poster 8</h3>
+                  <p class="poster-category">Fantasy</p>
+                  <p class="poster-year">2000</p>
+                </div>
+              </li>
+            </ul>
+
+            <button class="slider-poster-button" id="prev-poster-button">
+              <svg
+                class="slider-poster-button-icon-prev"
+                width="26"
+                height="10"
+                aria-label="icon vector left"
+              >
+                <use href="./img/icons/sprite.svg#icon-vector"></use>
+              </svg>
+              <!-- <span>Previous</span> -->
+            </button>
+            <div class="poster-slider-dots"></div>
+            <button class="slider-poster-button" id="next-poster-button">
+              <!-- <span>Next</span> -->
+              <svg
+                class="slider-poster-button-icon-next"
+                width="26"
+                height="10"
+                aria-label="icon vector right"
+              >
+                <use href="./img/icons/sprite.svg#icon-vector"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- ================= SLIDER SECTION =================================== -->
+
       <!-- ====================== Film Collеction Section ======================= -->
       <section class="films-collection section" id="films-collection">
         <div class="container films-collection-container">
-          <h2 class="section-title visually-hidden">Film collection</h2>
+          <h2 class="section-title">Top collection</h2>
           <ul class="films list">
             <!-- ================Dynamic creation ==================================-->
             <!-- <li class="film">
@@ -431,6 +602,7 @@
 
     <script src="./js/app.js" type="module"></script>
     <script src="./js/modal-window-handlers.js" type="module"></script>
+    <script src="./js/init-poster-slider.js" type="module"></script>
     <!-- <script src="./js/searchData.js" type="module"></script> -->
   </body>
 </html>

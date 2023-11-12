@@ -1,24 +1,24 @@
-
-@media screen and (min-width: 375px) { 
-
+@media screen and (min-width: 375px) {
   .section {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 
   .section-title {
+    margin-bottom: 20px;
     font-size: 32px;
     font-weight: 500;
     line-height: 1.38;
     letter-spacing: -0.03em;
+    text-align: center;
   }
 }
 @media screen and (min-width: 768px) {
-  
   .section-title {
     font-size: 44px;
     line-height: 1.45;
     letter-spacing: -0.03em;
+    margin-bottom: 30px;
   }
 
   .section {
@@ -31,6 +31,9 @@
   .section {
     padding-top: 75px;
     padding-bottom: 75px;
+  }
+  .section-title {
+    margin-bottom: 40px;
   }
 }
 

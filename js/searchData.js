@@ -12,10 +12,7 @@ async function onFormSubmit(event) {
   event.preventDefault();
 
   if (inputRef.value) {
-    console.log('inputRef.value', inputRef.value);
     const apiSearchURL = `${API_URL_SEARCH}${inputRef.value}&page1`;
-    console.log('submit', apiSearchURL);
-
     try {
       const respData = await getData(apiSearchURL, API_KEY);
 

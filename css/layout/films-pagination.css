@@ -1,3 +1,12 @@
+@media screen and (max-width: 374px) {
+  .pagination-button {
+    padding: 8px 8px;
+    gap: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 .pagination {
   display: flex;
   justify-content: space-between;
@@ -6,9 +15,9 @@
 .pagination-buttons {
   display: flex;
   column-gap: 8px;
-  align-items: baseline;  
+  align-items: baseline;
   margin-left: auto;
-  margin-right: auto;       
+  margin-right: auto;
 }
 
 .pagination-dots {
@@ -46,7 +55,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  color: var(--primary-color); 
+  color: var(--primary-color);
   padding: 8px 12px;
   border-radius: 15px;
   border: 1px solid rgba(252, 249, 249, 0.1);
@@ -89,41 +98,39 @@
 .pagination-dots {
   display: none;
   height: 59px;
-  
 }
 
-@media screen and (min-width: 768px) {  
-  .pagination-button{
+@media screen and (min-width: 768px) {
+  .pagination-button {
     display: none;
     height: 50px;
-  }  
-
-  .pagination-buttons {   
-    column-gap: 40px;    
   }
-  
-  .pagination-dots  {
+
+  .pagination-buttons {
+    column-gap: 40px;
+  }
+
+  .pagination-dots {
     display: flex;
-  }   
+  }
 }
 
 @media screen and (min-width: 1280px) {
-  .pagination-dots  {
+  .pagination-dots {
     display: flex;
-  }   
+  }
 
-  .pagination-buttons {   
-    column-gap: 18px;    
+  .pagination-buttons {
+    column-gap: 18px;
   }
 
   .pagination-dot {
     width: 40px;
-    height: 40px;    
+    height: 40px;
   }
 
-  .pagination-button {      
-    display: flex;     
-    padding: 20px 24px; 
+  .pagination-button {
+    display: flex;
+    padding: 20px 24px;
   }
-
 }

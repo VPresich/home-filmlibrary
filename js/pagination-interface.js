@@ -1,5 +1,6 @@
 import Slider from './slider.js';
 import insertPageDataToGallery from './insert-page-data-to-gallery.js';
+
 class PaginationInterface {
   #sliderRef;
   #elementsPerPage = 8;

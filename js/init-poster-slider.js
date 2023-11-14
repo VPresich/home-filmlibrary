@@ -1,16 +1,25 @@
-import PostersSliderInterface from './posters-slider-interface.js';
+import PostersSlider from './posters-slider.js';
 
 const refs = {
   postersSliderContainer: document.querySelector('.posters-slider'),
   slidesList: document.querySelector('.posters-slider').querySelectorAll('li'),
 };
 
-const sliderInterface = new PostersSliderInterface(
-  0,
-  calculateSlidesPerPage(),
-  refs.slidesList,
-  refs.postersSliderContainer
-);
+const dataForPostersSlider = {
+  indexElement: 0,
+  elementsListLength: refs.slidesList.length,
+  slidesPerPage: calculateSlidesPerPage(),
+  prevBtnId: 'prev-poster-button',
+  nextBtnId: 'next-poster-button',
+  dotsContainerId: 'posterSliderDots',
+  sliderContainerId: 'postersSlider',
+  dotDefaultClass: 'poster-dot',
+  dotActiveClass: 'active-dot',
+  isDotContainText: false,
+  elementsList: refs.slidesList,
+};
+
+const sliderInterface = new PostersSlider(dataForPostersSlider);
 
 window.addEventListener('resize', () => {
   const slidesPerPage = calculateSlidesPerPage();

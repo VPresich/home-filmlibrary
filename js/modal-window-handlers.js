@@ -1,7 +1,6 @@
 // For my modal window
 import { KEY_CODE_ESC } from './constants.js';
-import Slider from './slider.js';
-import ModalSliderInterface from './modal-slider-interface.js';
+import ModalSlider from './modal-slider.js';
 import insertDataToModalContent from './insert-data-to-modal-content.js';
 import insertDataToModalVideoContent from './insert-data-to-modal-content-video.js';
 
@@ -15,6 +14,22 @@ const refs = {
   modalPlayBtn: document.getElementById('modal-play-button'),
   modalPauseBtn: document.getElementById('modal-pause-button'),
   modalVideo: document.querySelector('.modal-video'),
+};
+
+const dataForSlider = {
+  indexElement: 0,
+  elementsListLength: 0,
+  slidesPerPage: 1,
+  prevBtnId: 'prevBtn',
+  nextBtnId: 'nextBtn',
+  dotsContainerId: 'sliderDots',
+  sliderContainerId: 'modalContent',
+  dotDefaultClass: 'slider-dot',
+  dotActiveClass: 'active-dot',
+  isDotContainText: false,
+  fnUpdateMarkUp: insertDataToModalContent,
+  fnUpdateMarkUpVideo: insertDataToModalVideoContent,
+  elementsList: [],
 };
 
 refs.gallery.addEventListener('click', onImageClick);
@@ -39,18 +54,13 @@ function onImageClick(event) {
   const closestLi = targetRef.closest('.film');
 
   const filmId = closestLi.dataset.filmid;
-  const filmList = event.currentTarget.children;
-  const indexList = Array.from(filmList).indexOf(closestLi);
+  const filmsList = event.currentTarget.children;
+  const indexList = Array.from(filmsList).indexOf(closestLi);
 
-  const sliderRef = new Slider(indexList, 1, filmList.length);
-  const sliderInterface = new ModalSliderInterface(
-    sliderRef,
-    filmList,
-    insertDataToModalContent, // Poster OK!
-    //insertDataToModalVideoContent, // Trailer TODO
-    refs.modalContent
-  );
-
+  dataForSlider.indexElement = indexList;
+  dataForSlider.elementsList = filmsList;
+  dataForSlider.elementsListLength = filmsList.length;
+  const sliderInterface = new ModalSlider(dataForSlider);
   openModalWindow(filmId);
 }
 

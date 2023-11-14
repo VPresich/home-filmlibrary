@@ -17,8 +17,6 @@ const refs = {
 };
 
 const dataForSlider = {
-  indexElement: 0,
-  elementsListLength: 0,
   slidesPerPage: 1,
   prevBtnId: 'prevBtn',
   nextBtnId: 'nextBtn',
@@ -29,7 +27,6 @@ const dataForSlider = {
   isDotContainText: false,
   fnUpdateMarkUp: insertDataToModalContent,
   fnUpdateMarkUpVideo: insertDataToModalVideoContent,
-  elementsList: [],
 };
 
 refs.gallery.addEventListener('click', onImageClick);
@@ -57,10 +54,15 @@ function onImageClick(event) {
   const filmsList = event.currentTarget.children;
   const indexList = Array.from(filmsList).indexOf(closestLi);
 
-  dataForSlider.indexElement = indexList;
-  dataForSlider.elementsList = filmsList;
-  dataForSlider.elementsListLength = filmsList.length;
-  const sliderInterface = new ModalSlider(dataForSlider);
+  // dataForSlider.indexElement = indexList;
+  // dataForSlider.elementsList = filmsList;
+  // dataForSlider.elementsListLength = filmsList.length;
+  const sliderInterface = new ModalSlider({
+    indexElement: indexList,
+    elementsListLength: filmsList.length,
+    ...dataForSlider,
+    elementsList: filmsList,
+  });
   openModalWindow(filmId);
 }
 

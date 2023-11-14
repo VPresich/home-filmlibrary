@@ -11,19 +11,19 @@ class SliderInterface {
   #dotDefaultClass;
   #dotActiveClass;
   #isDotContainText;
-  
+
   constructor({
-    indexElement = 0,
-    elementsListLength = 0,
-    slidesPerPage = 0,
-    prevBtnId = '',
-    nextBtnId = '',
+    indexElement,
+    elementsListLength,
+    slidesPerPage,
+    prevBtnId,
+    nextBtnId,
     dotsContainerId = '',
     sliderContainerId = '',
-    dotDefaultClass = 'slider-dot',
-    dotActiveClass = 'active-dot',
+    dotDefaultClass = '',
+    dotActiveClass = '',
     isDotContainText = false,
-  } = {}) {
+  }) {
     this.#sliderRef = new Slider(
       indexElement,
       slidesPerPage,
@@ -32,7 +32,7 @@ class SliderInterface {
 
     if (prevBtnId) this.#prevBtn = document.getElementById(prevBtnId);
     if (nextBtnId) this.#nextBtn = document.getElementById(nextBtnId);
-       
+
     if (dotsContainerId) {
       this.#dotActiveClass = dotActiveClass;
       this.#dotDefaultClass = dotDefaultClass;
@@ -61,7 +61,7 @@ class SliderInterface {
     });
   }
 
-  initTouchFunction() {   
+  initTouchFunction() {
     this.#sliderContainer.addEventListener('touchstart', event => {
       this.#touchStartX = event.touches[0].clientX;
     });

@@ -6,7 +6,7 @@ import GalleryPagination from './gallery-pagination.js';
 
 export default async function insertDataToGallery() {
   const galleryRef = document.querySelector('.films');
-  const isRequestForPage = true;
+  const isRequestRequire = true;
   const defaultElementsPerPage = 8;
   try {
     const respData = await getData(API_URL_TOP, API_KEY);
@@ -15,16 +15,16 @@ export default async function insertDataToGallery() {
       data: respData.items,
       fnCreateMarkup: createFilmsGalleryMarkup,
 
-      totalPages: isRequestForPage
+      totalPages: isRequestRequire
         ? respData.totalPages
         : Math.ceil(respData.items.length / defaultElementsPerPage),
 
       contentRef: galleryRef,
-      elementsPerPage: isRequestForPage
+      elementsPerPage: isRequestRequire
         ? respData.items.length
         : defaultElementsPerPage,
 
-      isNewRequestForPage: isRequestForPage,
+      isRequestNeed: isRequestRequire,
     };
     const galleryPagination = new GalleryPagination(dataParam);
 

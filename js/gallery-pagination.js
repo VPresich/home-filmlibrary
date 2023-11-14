@@ -3,15 +3,22 @@ import insertPageDataToGallery from './insert-page-data-to-gallery.js';
 
 class GalleryPagination extends SliderInterface {
   #elementsPerPage = 8;
-  #isNewRequestForPage = 0;
-  #data = [];
+  #isRequestNeed;
+  #data;
   #fnUpdateMarkUp;
   #ContentRef;
-  constructor(dataParam) {
+  constructor({
+    data,
+    totalPages,
+    elementsPerPage,
+    contentRef,
+    isRequestRequire,
+    fnCreateMarkup,
+  }) {
     const dataForSliderInterface = {
       indexElement: 0,
       slidesPerPage: 1,
-      elementsListLength: dataParam.totalPages,
+      elementsListLength: totalPages,
       prevBtnId: 'prevPageBtn',
       nextBtnId: 'nextPageBtn',
       dotsContainerId: 'paginationDots',
@@ -22,18 +29,18 @@ class GalleryPagination extends SliderInterface {
     };
     super(dataForSliderInterface);
 
-    this.#data = dataParam.data;
-    this.#fnUpdateMarkUp = dataParam.fnCreateMarkup;
-    this.#ContentRef = dataParam.contentRef;
-    this.#isNewRequestForPage = dataParam.isNewRequestForPage;
-    this.#elementsPerPage = dataParam.elementsPerPage;
+    this.#data = data;
+    this.#fnUpdateMarkUp = fnCreateMarkup;
+    this.#ContentRef = contentRef;
+    this.#isRequestNeed = isRequestRequire;
+    this.#elementsPerPage = elementsPerPage;
 
     super.update();
   }
 
   updateContent() {
     const slideNumber = super.getCurrentSlide();
-    if (this.#isNewRequestForPage) {
+    if (this.#isRequestNeed) {
       insertPageDataToGallery(slideNumber + 1);
     } else {
       const startElement = slideNumber * this.#elementsPerPage;

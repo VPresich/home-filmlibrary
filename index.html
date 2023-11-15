@@ -166,7 +166,7 @@ s<!DOCTYPE html>
         <div class="posters-collection-container container">
           <h2 class="section-title">Posters collection</h2>
           <div class="slider-wrapper">
-            <ul class="posters-slider list">
+            <ul class="posters-slider list" id="postersSlider">
               <li class="poster">
                 <div class="poster-cover-inner">
                   <img
@@ -174,7 +174,6 @@ s<!DOCTYPE html>
                     src="./img/posters/poster-1.jpg"
                     alt="Poster"
                     width="300"
-                   
                   />
                   <div class="poster-cover-darkened"></div>
                 </div>
@@ -315,7 +314,7 @@ s<!DOCTYPE html>
               </svg>
               <!-- <span>Previous</span> -->
             </button>
-            <div class="poster-slider-dots"></div>
+            <div class="poster-slider-dots" id="posterSliderDots"></div>
             <button class="slider-poster-button" id="next-poster-button">
               <!-- <span>Next</span> -->
               <svg
@@ -370,7 +369,7 @@ s<!DOCTYPE html>
                 </svg>
                 <span>Previous page</span>
               </button>
-              <div class="pagination-dots"></div>
+              <div class="pagination-dots" id="paginationDots"></div>
               <button class="pagination-button" id="nextPageBtn">
                 <span>Next page</span>
                 <svg
@@ -396,7 +395,7 @@ s<!DOCTYPE html>
             </svg>
           </button>
 
-          <div class="modal-content">
+          <div class="modal-content" id="modalContent">
             <!-- ================Dynamic creation ========================-->
             <!-- <img
               class="modal-poster"
@@ -420,10 +419,10 @@ s<!DOCTYPE html>
             <!-- ================Dynamic creation =========================-->
           </div>
           <div class="slider-container">
-            <div class="slider-dots"></div>
+            <div class="slider-dots" id="sliderDots"></div>
             <div class="modal-group-buttons">
               <div class="player-buttons">
-                <button class="player-button" id="modal-pause-button" Disabled> 
+                <button class="player-button" id="modal-pause-button" disabled>
                   <svg
                     class="player-button-icon-play"
                     width="30"
@@ -434,7 +433,7 @@ s<!DOCTYPE html>
                   </svg>
                   <span>Pause</span>
                 </button>
-                <button class="player-button" id="modal-play-button" Disabled>
+                <button class="player-button" id="modal-play-button" disabled>
                   <svg
                     class="player-button-icon-play"
                     width="30"
@@ -602,7 +601,7 @@ s<!DOCTYPE html>
 
     <script src="./js/app.js" type="module"></script>
     <script src="./js/modal-window-handlers.js" type="module"></script>
-    <script src="./js/init-poster-slider.js" type="module"></script>
+    <script src="./js/init-posters-slider.js" type="module"></script>
     <!-- <script src="./js/searchData.js" type="module"></script> -->
   </body>
 </html>

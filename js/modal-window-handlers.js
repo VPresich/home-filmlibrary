@@ -1,7 +1,5 @@
-// For my modal window
 import { KEY_CODE_ESC } from './constants.js';
-import Slider from './slider.js';
-import ModalSliderInterface from './modal-slider-interface.js';
+import ModalWindowSlider from './modal-window-slider.js';
 import insertDataToModalContent from './insert-data-to-modal-content.js';
 import insertDataToModalVideoContent from './insert-data-to-modal-content-video.js';
 
@@ -14,7 +12,7 @@ const refs = {
   modalSaveBtn: document.getElementById('modal-save-button'),
   modalPlayBtn: document.getElementById('modal-play-button'),
   modalPauseBtn: document.getElementById('modal-pause-button'),
-  modalVideo: document.querySelector('.modal-video'),
+  // modalVideo: document.querySelector('.modal-video'),
 };
 
 refs.gallery.addEventListener('click', onImageClick);
@@ -24,6 +22,20 @@ refs.modalBackdrop.addEventListener('click', onBackdropClick);
 refs.modalSaveBtn.addEventListener('click', onSaveBtnClick);
 refs.modalPlayBtn.addEventListener('click', onPlayBtnClick);
 refs.modalPauseBtn.addEventListener('click', onPauseBtnClick);
+
+const dataForSlider = {
+  slidesPerPage: 1,
+  prevBtnId: 'prevBtn',
+  nextBtnId: 'nextBtn',
+  dotsContainerId: 'sliderDots',
+  sliderContainerId: 'modalContent',
+  dotDefaultClass: 'slider-dot',
+  dotActiveClass: 'active-dot',
+  isDotContainText: false,
+  fnUpdateMarkUp: insertDataToModalContent,
+  fnUpdateMarkUpVideo: insertDataToModalVideoContent,
+};
+let modalWindowSlider;
 
 function onImageClick(event) {
   const targetRef = event.target;
@@ -39,18 +51,15 @@ function onImageClick(event) {
   const closestLi = targetRef.closest('.film');
 
   const filmId = closestLi.dataset.filmid;
-  const filmList = event.currentTarget.children;
-  const indexList = Array.from(filmList).indexOf(closestLi);
+  const filmsList = event.currentTarget.children;
+  const indexList = Array.from(filmsList).indexOf(closestLi);
 
-  const sliderRef = new Slider(indexList, 1, filmList.length);
-  const sliderInterface = new ModalSliderInterface(
-    sliderRef,
-    filmList,
-    insertDataToModalContent, // Poster OK!
-    //insertDataToModalVideoContent, // Trailer TODO
-    refs.modalContent
-  );
-
+  modalWindowSlider = new ModalWindowSlider({
+    indexElement: indexList,
+    elementsListLength: filmsList.length,
+    ...dataForSlider,
+    elementsList: filmsList,
+  });
   openModalWindow(filmId);
 }
 
@@ -66,6 +75,7 @@ function onCloseModalWindow(event) {
   window.removeEventListener('keydown', onWindowKeydown);
   document.body.classList.remove('stop-scrolling');
   refs.modalBackdrop.classList.remove('is-open');
+  modalWindowSlider.destroy();
 }
 
 function onWindowKeydown(event) {

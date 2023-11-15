@@ -12,7 +12,7 @@ class GalleryPagination extends SliderInterface {
     totalPages,
     elementsPerPage,
     contentRef,
-    isRequestRequire,
+    isRequestNeed,
     fnCreateMarkup,
   }) {
     const dataForSliderInterface = {
@@ -32,14 +32,19 @@ class GalleryPagination extends SliderInterface {
     this.#data = data;
     this.#fnUpdateMarkUp = fnCreateMarkup;
     this.#ContentRef = contentRef;
-    this.#isRequestNeed = isRequestRequire;
+    this.#isRequestNeed = isRequestNeed;
     this.#elementsPerPage = elementsPerPage;
 
     super.update();
   }
 
+  destroy() {
+    super.destroy();
+  }
+
   updateContent() {
     const slideNumber = super.getCurrentSlide();
+
     if (this.#isRequestNeed) {
       insertPageDataToGallery(slideNumber + 1);
     } else {

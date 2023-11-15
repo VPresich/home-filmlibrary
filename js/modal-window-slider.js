@@ -1,6 +1,6 @@
 import SliderInterface from './slider-interface.js';
 
-class ModalSlider extends SliderInterface {
+class ModalWindowSlider extends SliderInterface {
   constructor(params) {
     super(params);
     this.elementsList = params.elementsList;
@@ -8,11 +8,15 @@ class ModalSlider extends SliderInterface {
     super.update();
   }
 
+  destroy() {
+    super.destroy();
+  }
+
   updateContent() {
-    const slideNumber = super.getCurrentSlide();   
+    const slideNumber = super.getCurrentSlide();
     const itemId = this.elementsList[slideNumber].dataset.filmid;
     this.fnUpdateMarkUp(itemId);
   }
 }
 
-export default ModalSlider;
+export default ModalWindowSlider;

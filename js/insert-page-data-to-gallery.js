@@ -9,7 +9,6 @@ export default async function insertPageDataToGallery(pageNumber) {
     const respData = await getData(API_URL_TOP_PAGE + pageNumber, API_KEY);
     galleryRef.innerHTML = '';
     const filmsMarkup = createFilmsGalleryMarkup(respData.items);
-
     galleryRef.insertAdjacentHTML('beforeend', filmsMarkup);
   } catch (error) {
     console.error('Error:', error);

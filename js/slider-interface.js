@@ -44,62 +44,61 @@ class SliderInterface {
       this.#sliderContainer = document.getElementById(sliderContainerId);
     }
 
+    this.init();
+  }
+
+  init() {
     this.#prevBtn && this.#nextBtn && this.initBtnsFunction();
     this.#sliderContainer && this.initTouchFunction();
     this.#sliderDots && this.createDots();
   }
 
-  initBtnsFunction() {
-    this.#prevBtn.addEventListener('click', () => {
-      this.#sliderRef.onPrevSlide();
-      this.update();
-    });
+  update() {
+    this.updateContent();
+    this.#prevBtn && this.#nextBtn && this.updateButtons();
+    this.#sliderDots && this.updateDots();
+  }
 
-    this.#nextBtn.addEventListener('click', () => {
-      this.#sliderRef.onNextSlide();
-      this.update();
-    });
+  destroy() {
+    this.removeBtnsFunction();
+    this.#sliderDots && this.removeDots();
+    this.#sliderContainer && this.removeTouchFunction();
+  }
+
+  initBtnsFunction() {
+    this.#prevBtn &&
+      this.#prevBtn.addEventListener('click', this.onPrevBtnClick.bind(this));
+    this.#nextBtn &&
+      this.#nextBtn.addEventListener('click', this.onNextBtnClick.bind(this));
   }
 
   initTouchFunction() {
-    this.#sliderContainer.addEventListener('touchstart', event => {
-      this.#touchStartX = event.touches[0].clientX;
-    });
+    this.#touchStartX = 0;
+    this.#sliderContainer.addEventListener(
+      'touchstart',
+      this.onSliderTouchStart.bind(this)
+    );
 
-    this.#sliderContainer.addEventListener('touchmove', event => {
-      const currentX = event.touches[0].clientX;
-      const deltaX = this.#touchStartX - currentX;
-
-      if (deltaX > SliderInterface.touchThreshold) {
-        this.#sliderRef.onNextSlide();
-        this.#touchStartX = currentX;
-        this.update();
-      } else if (deltaX < -SliderInterface.touchThreshold) {
-        this.#sliderRef.onPrevSlide();
-        this.#touchStartX = currentX;
-        this.update();
-      }
-    });
+    this.#sliderContainer.addEventListener(
+      'touchmove',
+      this.onSliderTouchMove.bind(this)
+    );
   }
 
   createDots() {
     this.#sliderDots.innerHTML = '';
-    for (let ind = 0; ind < this.#sliderRef.slidesNumber; ind++) {
+    for (let ind = 0; ind < this.#sliderRef.slidesNumber; ind += 1) {
       const dot = document.createElement('div');
       dot.className = this.#dotDefaultClass;
-      if (this.#isDotContainText) dot.textContent = `${ind + 1}`;
       dot.dataset.index = ind;
+      if (this.#isDotContainText) dot.textContent = `${ind + 1}`;
       this.#sliderDots.appendChild(dot);
     }
 
-    this.#sliderDots.addEventListener('click', event => {
-      const dot = event.target;
-      if (dot.classList.contains(this.#dotDefaultClass)) {
-        const index = parseInt(dot.dataset.index, 10);
-        this.#sliderRef.goToSlide(index);
-        this.update();
-      }
-    });
+    this.#sliderDots.addEventListener(
+      'click',
+      this.onSliderDotsClick.bind(this)
+    );
   }
 
   setSlidesPerPage(newSlidesPerPage) {
@@ -114,12 +113,6 @@ class SliderInterface {
 
   getCurrentSlide() {
     return this.#sliderRef.currentSlide;
-  }
-
-  update() {
-    this.updateContent();
-    this.#prevBtn && this.#nextBtn && this.updateButtons();
-    this.#sliderDots && this.updateDots();
   }
 
   updateContent() {
@@ -138,6 +131,79 @@ class SliderInterface {
         children[i].classList.add(this.#dotActiveClass);
       } else {
         children[i].classList.remove(this.#dotActiveClass);
+      }
+    }
+  }
+
+  removeBtnsFunction() {
+    this.#prevBtn &&
+      this.#prevBtn.removeEventListener(
+        'click',
+        this.onPrevBtnClick.bind(this)
+      );
+    this.#nextBtn &&
+      this.#nextBtn.removeEventListener(
+        'click',
+        this.onNextBtnClick.bind(this)
+      );
+  }
+
+  removeDots() {
+    this.#sliderDots.innerHTML = '';
+    this.#sliderDots.removeEventListener(
+      'click',
+      this.onSliderDotsClick.bind(this)
+    );
+  }
+
+  removeTouchFunction() {
+    this.#sliderContainer.removeEventListener(
+      'touchstart',
+      this.onSliderTouchStart.bind(this)
+    );
+
+    this.#sliderContainer.removeEventListener(
+      'touchmove',
+      this.onSliderTouchMove.bind(this)
+    );
+  }
+
+  onPrevBtnClick() {
+    this.#sliderRef.onPrevSlide();
+    this.update();
+  }
+
+  onNextBtnClick() {
+    this.#sliderRef.onNextSlide();
+    this.update();
+  }
+
+  onSliderDotsClick(event) {
+    const dot = event.target;
+    if (dot.classList.contains(this.#dotDefaultClass)) {
+      const index = parseInt(dot.dataset.index, 10);
+      this.#sliderRef.goToSlide(index);
+      this.update();
+    }
+  }
+
+  onSliderTouchStart(event) {
+    this.#touchStartX = event.touches[0].clientX;
+  }
+
+  onSliderTouchMove(event) {
+    const currentX = event.touches[0].clientX;
+    const deltaX = this.#touchStartX - currentX;
+
+    if (deltaX > SliderInterface.touchThreshold) {
+      this.#sliderRef.onNextSlide();
+      this.#touchStartX = currentX;
+      this.update();
+    } else {
+      if (deltaX < -SliderInterface.touchThreshold) {
+        this.#sliderRef.onPrevSlide();
+        this.#touchStartX = currentX;
+        this.update();
       }
     }
   }

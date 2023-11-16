@@ -38,10 +38,6 @@ class GalleryPagination extends SliderInterface {
     super.update();
   }
 
-  destroy() {
-    super.destroy();
-  }
-
   updateContent() {
     const slideNumber = super.getCurrentSlide();
 

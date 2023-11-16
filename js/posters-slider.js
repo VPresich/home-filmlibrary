@@ -11,10 +11,6 @@ class PostersSlider extends SliderInterface {
     super.update();
   }
 
-  destroy() {
-    super.destroy();
-  }
-
   updateContent() {
     for (let i = 0; i < this.elementsList.length; i += 1) {
       const offset =

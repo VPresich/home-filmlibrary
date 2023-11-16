@@ -32,6 +32,7 @@ const dataForSlider = {
   dotDefaultClass: 'slider-dot',
   dotActiveClass: 'active-dot',
   isDotContainText: false,
+  modalContentRef: refs.modalContent,
   fnUpdateMarkUp: insertDataToModalContent,
   fnUpdateMarkUpVideo: insertDataToModalVideoContent,
 };
